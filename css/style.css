@@ -1,0 +1,76 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --cor0: #f5f5dc;
+    --cor1: white;
+    --cor2: black;
+}
+@font-face {
+    font-family: "Old Newspaper Types";
+    src: url(oldnewspapertypes/OldNewspaperTypes.ttf) format(TrueType);
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: "California";
+    src: url(dealerplate_california/dealerplate\ california.otf) format(OpenType);
+    font-weight: lighter;
+    font-style: normal;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    background-color: var(--cor0);
+    text-align: center;
+    padding: 20px;
+}
+header > h1{
+    font-size: 2em;
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cor2);
+    text-transform: uppercase; /*Deixa as letra maiusculas*/
+}
+header > p{
+    font-size: 1em;
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    text-align: center;
+}
+ul{
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    gap: 3%;
+    margin-top: 20px;
+    justify-content: center; /* Centraliza quando quebrar */
+}
+a{
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    background-color: blue;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    color: black;
+}
+ul a{
+    padding: 8px;
+}
+a:hover{
+    text-transform: capitalize;
+    background-color: lightblue;
+    border-radius: 8px;
+    color: white;
+    padding: 11px;
+}
+/* Estilos para telas com largura máxima de 600 pixels */
