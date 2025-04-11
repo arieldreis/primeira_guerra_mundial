@@ -78,4 +78,17 @@ a:hover{
     border-radius: 8px;
     padding: 11px;
 }
+#menu_navegacao{
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--header);
+    transition: 1s;
+}
+#menu_navegacao:hover{
+    background-color: #e0d8b0;
+    border-radius: 5px;
+    padding: 10px;
+      
+}
 /* Estilos para telas com largura máxima de 600 pixels */
