@@ -4,9 +4,13 @@
     padding: 0px;
 }
 :root{
-    --cor0: #f5f5dc;
     --cor1: white;
     --cor2: black;
+    --header: #f5f5dc;
+    --link_hover: #6e1414;
+    --body: #d6cbb5;
+    --main: #e8e0c6;
+    --footer: #4b3b2a;
 }
 @font-face {
     font-family: "Old Newspaper Types";
@@ -25,12 +29,13 @@ body{
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    background-color: var(--body);
 }
 header{
     width: 100%;
-    background-color: var(--cor0);
+    background-color: var(--header);
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 header > h1{
     font-size: 2em;
@@ -57,7 +62,6 @@ ul{
 }
 a{
     font-family: "California", Arial, Helvetica, Verdana, sans-serif;
-    background-color: blue;
     text-decoration: none;
     transition: 0.5s;
     border-radius: 5px;
@@ -67,10 +71,11 @@ ul a{
     padding: 8px;
 }
 a:hover{
+    text-decoration: underline;
     text-transform: capitalize;
-    background-color: lightblue;
+    background-color: var(--link_hover);
+    color: var(--cor1);
     border-radius: 8px;
-    color: white;
     padding: 11px;
 }
 /* Estilos para telas com largura máxima de 600 pixels */
