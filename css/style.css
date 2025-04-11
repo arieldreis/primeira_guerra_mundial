@@ -79,6 +79,7 @@ a:hover{
     padding: 11px;
 }
 #menu_navegacao{
+    display: none;
     margin-top: 20px;
     cursor: pointer;
     border: none;
@@ -89,6 +90,28 @@ a:hover{
     background-color: #e0d8b0;
     border-radius: 5px;
     padding: 10px;
+    transform: rotate(180deg);
       
 }
 /* Estilos para telas com largura máxima de 600 pixels */
+@media (max-width: 768px) {
+    /*Configuração dos links*/
+    #menu_links{
+        display: none; /*Esconde os links*/
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f5f5dc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #menu_links.show{
+        display: flex; /* Mostra quando tiver a classe .show */
+    }
+    #menu_navegacao {
+        display: block;
+        background-color: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+}
