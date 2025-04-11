@@ -6,6 +6,9 @@
 :root{
     --cor1: white;
     --cor2: black;
+    --cor3: #f0f0dc;
+    --cor4: #e6e6d1;
+    --cor5: #e0d8b0;
     --header: #f5f5dc;
     --link_hover: #6e1414;
     --body: #d6cbb5;
@@ -65,7 +68,7 @@ a{
     text-decoration: none;
     transition: 0.5s;
     border-radius: 5px;
-    color: black;
+    color: var(--cor2);
 }
 ul a{
     padding: 8px;
@@ -87,18 +90,19 @@ a:hover{
     transition: 1s;
 }
 #menu_navegacao:hover{
-    background-color: #e0d8b0;
+    background-color: var(--cor5);
     border-radius: 5px;
     padding: 10px;
 }
 /* Estilos para telas com largura máxima de 600 pixels */
+/*RESPONSIVIDADE*/
 @media (max-width: 768px) {
     /*Configuração dos links*/
     #menu_links{
         display: none; /*Esconde os links*/
         flex-direction: column;
         gap: 10px;
-        background-color: #f5f5dc;
+        background-color: var(--header);
         padding: 10px;
         border-radius: 5px;
     }
@@ -113,5 +117,16 @@ a:hover{
         cursor: pointer;
         margin-left: auto; /*Centraliza o botão*/
         margin-right: auto; /*Centraliza o botão*/
-      }
+    }
+    .menu-mobile-link{
+        background-color: var(--cor3);
+        text-align: left;
+        padding: 20px;
+        transition: 0.5 ease-in;
+        width: 100%;
+        color: var(--cor1);
+    }
+    .menu-mobile-link:hover{
+        background-color: var(--cor4);
+    }
 }
