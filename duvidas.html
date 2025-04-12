@@ -28,13 +28,17 @@
         </nav>
     </header>
     <main>
+        <!--https://formspree.io/f/xdkebgyg-->
         <h2>SAC DE DÚVIDAS</h2>
-        <form action="https://formspree.io/f/xdkebgyg" method="post">
+        <form action="https://formspree.io/f/xdkebgyg" method="post" onsubmit="verificacao(event)" class="formDuvidas">
             <label for="grupo">GRUPO: </label><br>
             <input type="text" name="Grupo" id="nome_grupo" placeholder="Nome do Grupo..."><br>
             <label for="doubt">Dúvida: </label><br>
             <textarea name="Duvida" id="duvida" placeholder="Digite a sua dúvida referente a Primeira Guerra Mundial..."></textarea><br>
-            <button type="submit" class="btn_duvida" onclick="verificacao(event)">ENVIAR</button>
+            <div id="content">
+                <!--CRIAR UM PARAGRAFO-->
+            </div>
+            <button type="submit" class="btn_duvida">ENVIAR</button>
         </form>
     </main>
     <footer>
