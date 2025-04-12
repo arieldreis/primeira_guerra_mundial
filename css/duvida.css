@@ -1,0 +1,192 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --cor1: white;
+    --cor2: black;
+    --cor3: #f0f0dc;
+    --cor4: #e6e6d1;
+    --cor5: #e0d8b0;
+    --cor6: #4CAF50;
+    --header: #f5f5dc;
+    --link_hover: #6e1414;
+    --body: #d6cbb5;
+    --main: #e8e0c6;
+    --footer: #4b3b2a;
+}
+@font-face {
+    font-family: "Old Newspaper Types";
+    src: url(oldnewspapertypes/OldNewspaperTypes.ttf) format(TrueType);
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: "California";
+    src: url(dealerplate_california/dealerplate\ california.otf) format(OpenType);
+    font-weight: lighter;
+    font-style: normal;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    background-color: var(--body);
+}
+header{
+    width: 100%;
+    background-color: var(--header);
+    text-align: center;
+    padding: 30px;
+}
+header > h1{
+    font-size: 2em;
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cor2);
+    text-transform: uppercase; /*Deixa as letra maiusculas*/
+}
+header > p{
+    font-size: 1em;
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    text-align: center;
+}
+ul{
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    gap: 3%;
+    margin-top: 20px;
+    justify-content: center; /* Centraliza quando quebrar */
+}
+a{
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    color: var(--cor2);
+}
+ul a{
+    padding: 8px;
+}
+a:hover{
+    text-decoration: underline;
+    text-transform: capitalize;
+    background-color: var(--link_hover);
+    color: var(--cor1);
+    border-radius: 8px;
+    padding: 11px;
+}
+#menu_navegacao{
+    display: none;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--header);
+    transition: 1s;
+}
+#menu_navegacao:hover{
+    background-color: var(--cor5);
+    border-radius: 5px;
+    padding: 10px;
+}
+/* Estilos para telas com largura máxima de 600 pixels */
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+    /*Configuração dos links*/
+    #menu_links{
+        display: none; /*Esconde os links*/
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--header);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #menu_links.show{
+        display: flex; /* Mostra quando tiver a classe .show */
+    }
+    #menu_navegacao {
+        display: block;
+        background-color: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        margin-left: auto; /*Centraliza o botão*/
+        margin-right: auto; /*Centraliza o botão*/
+    }
+    .menu-mobile-link{
+        background-color: var(--cor3);
+        text-align: left;
+        padding: 20px;
+        transition: 0.5 ease-in;
+        width: 100%;
+        color: var(--cor1);
+    }
+    .menu-mobile-link:hover{
+        background-color: var(--cor4);
+    }
+}
+main{
+    background-color: var(--main);
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    margin: 3%;
+    padding: 40px;
+    border-radius: 4px;
+    width: 30%;
+}
+main > h2{
+    text-transform: uppercase;
+    color: var(--cor2);
+    margin-top: 20px;
+    text-align: center;
+}
+main > p{
+    text-indent: 30px;
+    color: var(--cor2);
+}
+input[type="text"]{
+    padding: 20px;
+    border-radius: 5px;
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    width: 90%;
+}
+textarea{
+    padding: 20px;
+    border-radius: 5px;
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    width: 90%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 20vh;
+}
+footer{
+    width: 100%;
+    background-color: var(--footer);
+    text-align: center;
+    padding: 30px;
+    color: var(--cor1);
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+}
+.btn_duvida{
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--cor6);
+    color: var(--cor1);
+    font-family: "California", Arial, Helvetica, Verdana, sans-serif;
+    transition: 0.5s;
+    border-radius: 6px;
+    width: 100%;
+}
+.btn_duvida:hover{
+    background-color: lightgreen;
+    transform: scale(1.1);
+}
