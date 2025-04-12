@@ -14,3 +14,12 @@ function clicar_menu(){
     */
     btn.style.transition = "0.5s"
 }
+function quiz(){
+
+}
+function voltar_cima(){
+    window.scrollTo({
+        top: 0, // Topo da tela
+        behavior:"smooth" // Rolagem suave
+    });
+}
