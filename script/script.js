@@ -14,12 +14,17 @@ function clicar_menu(){
     */
     btn.style.transition = "0.5s"
 }
-function quiz(){
-
-}
 function voltar_cima(){
     window.scrollTo({
         top: 0, // Topo da tela
         behavior:"smooth" // Rolagem suave
     });
+}
+function verificacao(){
+    event.preventDefault();
+    const nomegrupo = document.getElementById('nome_grupo');
+    const duvida = document.getElementById('duvida');
+    // Verificação da etapa de dados.
+    const groupname = nomegrupo.value;
+    const doubt = duvida.value;
 }

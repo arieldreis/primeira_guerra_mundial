@@ -2,6 +2,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 :root{
     --cor1: white;
@@ -136,9 +137,11 @@ main{
     background-color: var(--main);
     font-family: "California", Arial, Helvetica, Verdana, sans-serif;
     margin: 3%;
-    padding: 40px;
+    padding: 7% 9%;
     border-radius: 4px;
-    width: 30%;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 5px 0px 5px 5px rgb(94, 90, 90);
 }
 main > h2{
     text-transform: uppercase;
@@ -156,16 +159,42 @@ input[type="text"]{
     font-family: "California", Arial, Helvetica, Verdana, sans-serif;
     margin-bottom: 30px;
     margin-top: 10px;
-    width: 90%;
+    width: 100%;
+    border: none;
+}
+input[type="text"]:focus{
+    outline: none;
+    border:2px solid #ccc;
 }
 textarea{
+    border: none;
     padding: 20px;
     border-radius: 5px;
     font-family: "California", Arial, Helvetica, Verdana, sans-serif;
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
     margin-top: 10px;
     height: 20vh;
+}
+textarea:focus{
+    outline: none;
+    border:2px solid #ccc;
+}
+@media(max-width: 768px){
+    main{
+        width: 90%;
+        padding: 10% 5%;
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+        font-size: 1rem;
+        padding: 15px;
+    }
+    .btn_duvida{
+        width: 100%;
+        font-size: 1rem;
+    }
 }
 footer{
     width: 100%;
