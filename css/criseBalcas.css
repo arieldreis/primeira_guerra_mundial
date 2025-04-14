@@ -185,3 +185,11 @@ main > span{
     font-size: 3em;
     text-align: center;
 }
+span{
+    font-size: 3em;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
