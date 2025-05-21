@@ -4,8 +4,8 @@
     padding: 0px;
 }
 :root{
-    --cor1: white;
-    --cor2: black;
+    --cor1: #ffffff;
+    --cor2: #3e3e3e;
     --cor3: #f0f0dc;
     --cor4: #e6e6d1;
     --cor5: #e0d8b0;
@@ -168,7 +168,7 @@ main > p{
     font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
  }
  .btn_topo{
-    padding: 10px 20px;
+    padding: 30px;
     margin-bottom: 10px;
     border: none;
     border-radius: 3px;
@@ -176,16 +176,29 @@ main > p{
     background-color: #4CAF50;
     color: var(--cor1);
     transition: 0.5s;
+    font-weight: bolder;
  }
 .btn_topo:hover{
     background-color: lightgreen;
     transform: scale(1.1);
 }
-span{
-    font-size: 3em;
-}
-section{
+.container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+.container > img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 100vh;
+    height: auto;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: var(--cor5);
+    padding: 15px;
+    border-radius: 5px;
 }

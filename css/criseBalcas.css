@@ -200,7 +200,8 @@ section{
     justify-content: center;
 }
 .container > img{
-    width: 50%;
+    max-width: 100%;
+    width: 100vh;
     height: auto;
     margin-top: 30px;
     border-radius: 10px;

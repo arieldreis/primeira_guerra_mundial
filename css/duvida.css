@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 :root{
-    --cor1: white;
-    --cor2: black;
+    --cor1: #ffffff;
+    --cor2: #3e3e3e;
     --cor3: #f0f0dc;
     --cor4: #e6e6d1;
     --cor5: #e0d8b0;

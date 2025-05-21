@@ -220,4 +220,10 @@ main > p{
 }
 .container a{
     margin-top: 20px;
+    background-color: var(--cor5);
+    padding: 15px;
+    border-radius: 5px;
+}
+.container a:hover{
+    background-color: var(--link_hover);
 }
