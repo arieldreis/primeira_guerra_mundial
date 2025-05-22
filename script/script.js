@@ -55,3 +55,56 @@ function verificacao(event){
     div.style.textTransform = "uppercase";
     form.submit();
 }
+ // Pega a faixa dos slides
+const track = document.getElementById('track');
+// Conta qual slide está aparecendo (começa no 0)
+let currentSlide = 0;
+// Total de slides (divs com class="slide")
+const totalSlides = track.children.length;
+// Largura do slide
+const slideWidth = 300;
+function moveToPrev(){
+// Se ainda tem próximo slide
+    if(currentSlide < totalSlides - 1){
+        currentSlide++;
+    }else{
+        currentSlide = 0; // Volta para o início
+    }
+    // Move a faixa pro lado usando translateX
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+function moveToNext(){
+    if(currentSlide > 0){
+        currentSlide--;
+    }else{
+        currentSlide = totalSlides - 1; // Vai pro último
+    }
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+// Carrosel Parte 2
+
+const track2 = document.getElementById('track2');
+// Conta qual slide está aparecendo (começa no 0)
+let currentSlide2 = 0;
+// Total de slides (divs com class="slide")
+const totalSlides2 = track.children.length;
+// Largura do slide
+const slideWidth2 = 300;
+function moveToPrev2(){
+    if(currentSlide2 < totalSlides2 - 1){
+        currentSlide2++;
+    }else{
+        currentSlide2 = 0; // Volta para o início
+    }
+    // Move a faixa pro lado usando translateX
+    track2.style.transform = `translateX(-${currentSlide2 * slideWidth2}px)`;
+}
+function moveToNext2(){
+    if(currentSlide2 > 0){
+        currentSlide2--;
+    }else{
+        currentSlide2 = totalSlides2 - 1; // Vai pro último
+    }
+    track2.style.transform = `translateX(-${currentSlide2 * slideWidth2}px)`;
+}

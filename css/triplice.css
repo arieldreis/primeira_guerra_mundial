@@ -168,7 +168,7 @@ main > p{
     font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
  }
  .btn_topo{
-    padding: 10px 20px;
+    padding: 30px;
     margin-bottom: 10px;
     border: none;
     border-radius: 3px;
@@ -176,16 +176,42 @@ main > p{
     background-color: #4CAF50;
     color: var(--cor1);
     transition: 0.5s;
+    font-weight: bolder;
  }
 .btn_topo:hover{
     background-color: lightgreen;
     transform: scale(1.1);
 }
-span{
-    font-size: 3em;
+.carousel{
+    width: 300px; /* Largura visível */
+    overflow: hidden; /* Esconde o que estiver fora da moldura */
+    border: 3px solid #333;
+    margin: auto;
+    margin-top: 30px;
 }
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Faixa que carrega os slides lado a lado */
+.carousel-track{
+    display: flex; /* Coloca os slides lado a lado */
+    transition: 0.5s ease-in-out; /* Suaviza a transição */
+}
+.slide{
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0; /* Impede que os slides encolham */
+    line-height: 200px; /* Centraliza verticalmente */
+}
+.slide img{
+    width: 100%;    /* Faz a imagem ocupar toda a largura do slide */
+    height: 100%;   /* Faz ocupar toda a altura do slide */
+    object-fit: cover; /* Corta a imagem pra ela preencher sem distorcer */
+}
+.buttons{
+    text-align: center;
+    margin-top: 15px;
+}
+button{
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }

@@ -28,11 +28,35 @@
         </nav>
     </header>
     <main>
-        <section>
-            <span>⚠️</span>
-            <h2>SITE EM DESENVOLVIMENTO</h2>
-        </section>
+        <!-- Container principal do carrossel -->
+         <h2>Tríplice Aliança</h2>
+        <div class="carousel">
+            <div class="carousel-track" id="track">
+                <img src="assets/germanyFlag(1891-1917).webp" alt="Imagem da bandeira alemã" class="slide">
+                <img src="assets/Imp3Fustro_HungaroFlag.webp" alt="Imagem da bandeira do império Autro-Hungaro" class="slide">
+                <img src="assets/ItalyFlag.png" alt="Imagem da bandeira Italiana" class="slide">
+            </div>
+        </div>
+        <!--Botões de Navegação-->
+        <div class="buttons">
+            <button onclick="moveToPrev()">⬅️ Voltar</button>
+            <button onclick="moveToNext()">Avançar ➡️</button>
+        </div>
+        <h2>Tríplice Entente</h2>
+        <div class="carousel">
+            <div class="carousel-track" id="track2">
+                <img src="assets/frenchFlag.jpg" alt="Imagem da bandeira alemã" class="slide">
+                <img src="assets/united-kingdomFlag.avif" alt="Imagem da bandeira do império Autro-Hungaro" class="slide">
+                <img src="assets/russianFlag.jpg" alt="Imagem da bandeira Italiana" class="slide">
+            </div>
+        </div>
+        <!--Botões de Navegação-->
+        <div class="buttons">
+            <button onclick="moveToPrev2()">⬅️ Voltar</button>
+            <button onclick="moveToNext2()">Avançar ➡️</button>
+        </div>
     </main>
+    <button onclick="voltar_cima()" class="btn_topo">TOPO ⬆️</button>
     <footer>
         <p>&copy;2025 Desenvolvido pelo Grupo 2 | Site criado pelo Grupo 2 | Todos os direitos reservados</p>
         <p>Desenvolvido para fins educacionais.</p>
