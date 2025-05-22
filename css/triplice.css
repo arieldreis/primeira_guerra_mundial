@@ -14,6 +14,11 @@
     --body: #d6cbb5;
     --main: #e8e0c6;
     --footer: #4b3b2a;
+    --btn-topo: #4CAF50;
+    --btn-topo_hover: #90ee90;
+    --btncarrossel: #8B4513;
+    --corFontCarrossel: #fffbea;
+    --hoverCarrossel: #5c2e0f;
 }
 @font-face {
     font-family: "Old Newspaper Types";
@@ -173,13 +178,13 @@ main > p{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: var(--btn-topo);
     color: var(--cor1);
     transition: 0.5s;
     font-weight: bolder;
  }
 .btn_topo:hover{
-    background-color: lightgreen;
+    background-color: var(--btn-topo_hover);
     transform: scale(1.1);
 }
 .carousel{
@@ -209,9 +214,28 @@ main > p{
     text-align: center;
     margin-top: 15px;
 }
-button{
-    padding: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 5px;
+button {
+  background-color: var(--btncarrossel); 
+  color: var(--corFontCarrossel);              
+  border: none;              
+  padding: 10px 20px;        
+  margin: 5px;               
+  border-radius: 8px;       
+  font-size: 16px;           
+  font-weight: bold;         
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;           
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+}
+
+button:hover {
+  background-color: var(--hoverCarrossel); 
+  transform: scale(1.05);   
+}
+
+button:active {
+  transform: scale(0.97); /* Leve encolhida ao clicar */
 }
