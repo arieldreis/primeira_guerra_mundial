@@ -214,7 +214,7 @@ main > p{
     text-align: center;
     margin-top: 15px;
 }
-button {
+.buttons > button {
   background-color: var(--btncarrossel); 
   color: var(--corFontCarrossel);              
   border: none;              
@@ -230,12 +230,10 @@ button {
   align-items: center;
   gap: 8px; /* Espaço entre ícone e texto */
 }
-
-button:hover {
+.buttons > button:hover {
   background-color: var(--hoverCarrossel); 
-  transform: scale(1.05);   
+  transform: scale(1.05);   /* Leve aumento no hover */
 }
-
-button:active {
+.buttons > button:active {
   transform: scale(0.97); /* Leve encolhida ao clicar */
 }
