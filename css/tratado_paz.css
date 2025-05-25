@@ -138,13 +138,23 @@ main{
     padding: 20px;
     border-radius: 4px;
 }
-main > h2{
+main > h1{
+    text-transform: uppercase;
+    color: var(--cor2);
+    margin-top: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+main > h3{
     text-transform: uppercase;
     color: var(--cor2);
     margin-top: 20px;
 }
 main > p{
     text-indent: 30px;
+    color: var(--cor2);
+}
+main > span{
     color: var(--cor2);
 }
 @media(max-width: 768px){
@@ -184,7 +194,7 @@ main > p{
     font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
  }
  .btn_topo{
-    padding: 10px 20px;
+    padding: 30px;
     margin-bottom: 10px;
     border: none;
     border-radius: 3px;
@@ -192,16 +202,9 @@ main > p{
     background-color: #4CAF50;
     color: var(--cor1);
     transition: 0.5s;
+    font-weight: bolder;
  }
 .btn_topo:hover{
     background-color: lightgreen;
     transform: scale(1.1);
-}
-span{
-    font-size: 3em;
-}
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }

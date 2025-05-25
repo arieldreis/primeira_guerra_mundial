@@ -184,7 +184,7 @@ main > p{
     font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
  }
  .btn_topo{
-    padding: 10px 20px;
+    padding: 30px;
     margin-bottom: 10px;
     border: none;
     border-radius: 3px;
@@ -192,6 +192,7 @@ main > p{
     background-color: #4CAF50;
     color: var(--cor1);
     transition: 0.5s;
+    font-weight: bolder;
  }
 .btn_topo:hover{
     background-color: lightgreen;
