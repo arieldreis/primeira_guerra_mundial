@@ -147,6 +147,22 @@ main > p{
     text-indent: 30px;
     color: var(--cor2);
 }
+@media(max-width: 768px){
+    main{
+        width: 90%;
+        padding: 10% 5%;
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+        font-size: 1rem;
+        padding: 15px;
+    }
+    .btn_duvida{
+        width: 100%;
+        font-size: 1rem;
+    }
+}
 .lista_ordenadas{
     display: contents;
 }
