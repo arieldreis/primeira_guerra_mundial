@@ -200,7 +200,6 @@ main > p{
 .carousel{
     width: 300px; /* Largura visível */
     overflow: hidden; /* Esconde o que estiver fora da moldura */
-    border: 3px solid #333;
     margin: auto;
     margin-top: 30px;
 }
@@ -214,6 +213,7 @@ main > p{
     height: 200px;
     flex-shrink: 0; /* Impede que os slides encolham */
     line-height: 200px; /* Centraliza verticalmente */
+    border-radius: 10px;
 }
 .slide img{
     width: 100%;    /* Faz a imagem ocupar toda a largura do slide */
