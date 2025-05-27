@@ -14,8 +14,6 @@
     --body: #d6cbb5;
     --main: #e8e0c6;
     --footer: #4b3b2a;
-    --btn-topo: #4CAF50;
-    --btn-topo_hover: #90ee90;
     --btncarrossel: #8B4513;
     --corFontCarrossel: #fffbea;
     --hoverCarrossel: #5c2e0f;
@@ -188,13 +186,13 @@ main > p{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: var(--btn-topo);
+    background-color: var(--btncarrossel);
     color: var(--cor1);
     transition: 0.5s;
     font-weight: bolder;
  }
 .btn_topo:hover{
-    background-color: var(--btn-topo_hover);
+    background-color: var(--btncarrossel);
     transform: scale(1.1);
 }
 .carousel{

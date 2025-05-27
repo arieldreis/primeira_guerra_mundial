@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(triplice.css);
 *{
     margin: 0px;
     padding: 0px;
@@ -189,13 +190,13 @@ main > p{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: var(--btncarrossel);
     color: var(--cor1);
     transition: 0.5s;
     font-weight: bolder;
  }
 .btn_topo:hover{
-    background-color: lightgreen;
+    background-color: var(--hoverCarrossel);
     transform: scale(1.1);
 }
 .container{
