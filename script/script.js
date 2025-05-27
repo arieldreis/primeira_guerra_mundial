@@ -203,6 +203,23 @@ const questions = {
     `
 };
 
-function loadPage(page){
-    document.getElementById('quiz-content').innerHTML = questions[page];
+let current = 0;
+
+function renderQuestions(){
+    const container = document.getElementById('quiz-content');
+    container.innerHTML = questions[current];
 }
+function nextQuestion(){
+    if(current < questions.length - 1){
+        current++;
+        renderQuestions();
+    }
+}
+function prevQuestion(){
+    if(current > 0){
+        current--;
+        renderQuestions();
+    }
+}
+
+renderQuestions();
