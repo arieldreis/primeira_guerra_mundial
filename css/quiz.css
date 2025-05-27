@@ -135,7 +135,7 @@ main{
     background-color: var(--main);
     font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
     margin: 3%;
-    padding: 20px;
+    padding: 40px;
     border-radius: 4px;
 }
 main > h2{
@@ -181,11 +181,55 @@ main > p{
     background-color: lightgreen;
     transform: scale(1.1);
 }
-span{
-    font-size: 3em;
+.Questions{
+    background-color: var(--cor3);
+    padding: 30px;
+    border-radius: 10px;
 }
-section{
+.bloco{
+    background-color: #e6e6d1;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+.bloco:hover{
+    background-color: #d1d1a8;
+    transform: translateX(10px);
+}
+.buttons{
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+}
+.buttons > button{
+    background-color: var(--cor5);
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+.buttons > button:hover{
+    background-color: var(--link_hover);
+    color: var(--cor1);
+}
+
+.barra-container {
+  width: 100%;
+  background-color:  var(--header);
+  border-radius: 10px;
+  height: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.barra-progresso {
+  height: 100%;
+  background-color: #e0d8b0;
+  width: 20%; /* pode ser alterado via JavaScript */
+  transition: width 0.5s ease-in-out;
 }
