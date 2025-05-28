@@ -94,6 +94,10 @@ const questions = {
 };
 let currentQuiz = 0; // variável que guarda o índice da pergunta atual (ex: 0 = primeira pergunta)
 const questionsKeys = Object.keys(questions); // pega todas as "chaves" do objeto questions (ex: ['questionOne', 'questionTwo', ...])
+let porcent = 0; // Logica do player
+// variaveis de lógica do player
+let barraContainer = document.getElementById('barraContainer');
+let progressPlayer = document.getElementById('progressPlay');
 function renderQuestions(){
     const container = document.getElementById('quiz-content'); // pega a div onde as perguntas vão aparecer
     const currentKey = questionsKeys[currentQuiz]; // pega a chave da pergunta atual (ex: 'questionOne')
@@ -104,11 +108,19 @@ function nextQuestion(){
         currentQuiz++; // vai pra próxima pergunta (ex: de 0 para 1)
         renderQuestions(); // renderiza a pergunta anterior na tela
     }
+    if(porcent < 100){
+        porcent+=20;
+        progressPlayer.style.width = porcent + "%";
+    }
 }
 function prevQuestion(){
     if(currentQuiz > 0){ // só volta se não for a primeira pergunta
         currentQuiz--; // volta uma pergunta
         renderQuestions();
+    }
+    if(porcent > 0){
+        porcent-=20; 
+        progressPlayer.style.width = porcent + "%";       
     }
 }
 // Object.keys(questions).length para contar quantas perguntas tem.

@@ -230,6 +230,6 @@ main > p{
 .barra-progresso {
   height: 100%;
   background-color: #e6dba0;
-  width: 20%; /* pode ser alterado via JavaScript */
+  width: 0%; /* pode ser alterado via JavaScript */
   transition: width 0.5s ease-in-out;
 }
