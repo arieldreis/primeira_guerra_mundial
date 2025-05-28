@@ -18,16 +18,16 @@ function clicar_menu(){
 const questions = {
     questionOne: `
             <h4>1. Qual foi o estopim imediato que desencadeou a Primeira Guerra Mundial em 1914?</h4>
-            <div class="bloco">
+            <div class="bloco" id="resposta_errada1" onclick"resposta_errada(this)">
                 <p>A Revolução Russa.</p>
             </div>
-            <div class="bloco">
+            <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
                 <p>A invasão da Polônia.</p>
             </div>
-            <div class="bloco">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa(this)">
                 <p>O assasinato do arquiduque Francisco Ferdinando.</p>
             </div>
-            <div class="bloco">
+            <div class="bloco" id="resposta_errada3" onclick="resposta_errada(this)">
                 <p>A criação da Liga das Nações.</p>
             </div>
     `,
@@ -92,6 +92,26 @@ const questions = {
             </div>
     `
 };
+const explicao_resposta = {
+    answerOne: "",
+    answerTwo: "", 
+    answerThree: "",
+    answerFour: ""
+}
+/*VERIFICA SE A RESPOSTA ESTÁ CERTA OU ERRADA.*/
+function resposta_errada(elementoClicado){
+    // const wronganswer = document.getElementById('resposta_errada1');
+    elementoClicado.style.backgroundColor = "#f75151";
+    elementoClicado.style.color = "white";
+    elementoClicado.style.border = "red";
+}
+function resposta_certa(elementoClicado){
+    // const rightanswer = document.getElementById('resposta_certa1');
+    elementoClicado.style.backgroundColor = "lightgreen";
+    elementoClicado.style.color = "white";
+    elementoClicado.style.border = "green";
+}
+/*SEPARAÇÃO DO CÓDIGO*/ 
 let currentQuiz = 0; // variável que guarda o índice da pergunta atual (ex: 0 = primeira pergunta)
 const questionsKeys = Object.keys(questions); // pega todas as "chaves" do objeto questions (ex: ['questionOne', 'questionTwo', ...])
 let porcent = 0; // Logica do player
