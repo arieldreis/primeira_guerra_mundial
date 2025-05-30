@@ -101,17 +101,13 @@ const questions = {
     `,
     final: `
         <div class="Questions" id="quiz-content"> <!--Single page Application-->
-            <h2 class="alinhamentoText">Resultado do Quiz</h3>
+            <h2 class="alinhamentoText">Resultado do Quiz</h2>
             <div class="alinhamentoText">
-                <h3 id="quantidade-acertos"></h3>
+                <h3 class="quantidade_acertos"></h3>
             </div>
             <div class="containerButtonSPA">
                 <button onclick="redirecionar('quiz.html')">Reiniciar</button>
             </div>
-        </div>
-        <div class="buttons">
-            <button onclick="prevQuestion()" style="display:none;">Anterior</button>
-            <button onclick="nextQuestion()" style="display:none;">Próxima</button>
         </div>
     `
 };
@@ -122,28 +118,30 @@ function redirecionar(arquivo){
     window.location.href = arquivo;
 }
 function mostrarResultado(){
-    const mensagem = document.getElementById('quantidade-acertos');
-    const porcentagem = (acertos / 5) * 100;
-    if(mensagem){
-        mensagem.innerHTML = `Você acertou ${acertos} de 5 questões (${porcentagem}%)`;
-    }else{
-        console.error("O seu código está com incossistência, verifique o seu ID.");
-    }
+    setTimeout(() => {
+        const mensagem = document.querySelector('.quantidade_acertos');
+        const porcentagem = (acertos / 5) * 100;
+        if(mensagem){
+            mensagem.innerHTML = `Você acertou ${acertos} de 5 questões (${porcentagem}%)`;
+        }else{
+            console.error("Elemento 'quantidade_acertos' não encontrado!");
+        }
+    }, 2000);
 }
 function marcarRepostaCerta(elemento){
     elemento.style.backgroundColor = "green";
     elemento.style.color = "white";
     // Desabilita todas as outras respostas da mesma pergunta
     const pai = elemento.parentNode;
-    const opcoes = pai.querySelectorAll(".bloco");
+    const opcoes = pai.querySelectorAll(".bloco"); // Seleciona todos as classes
     opcoes.forEach(opcao => {
-        opcao.onclick = null;
+        opcao.onclick = null;  
         opcao.style.cursor = "not-allowed";
     });
 }
 function verificarFim(){
     const totalPerguntas = 5;
-    if(totalRespondida == totalPerguntas){
+    if(totalRespondida === totalPerguntas){
         mostrarResultado();
     }
 }
