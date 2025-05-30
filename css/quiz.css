@@ -252,6 +252,6 @@ main > p{
 .containerButtonSPA > button:hover{
     transform: scale(1.1);
 }
-.alinhamentoText{
+.alinhamentoText > h3{
     text-align: center;
 }

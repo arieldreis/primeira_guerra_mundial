@@ -27,7 +27,7 @@ const questions = {
             <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
                 <p>A invasão da Polônia.</p>
             </div>
-            <div class="bloco" id="resposta_certa1" onclick="resposta_certa1()">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa1(this)">
                 <p>O assasinato do arquiduque Francisco Ferdinando.</p>
             </div>
             <div class="bloco" id="resposta_errada3" onclick="resposta_errada(this)">
@@ -40,7 +40,7 @@ const questions = {
             <div class="bloco" id="resposta_errada1" onclick="resposta_errada(this)">
                 <p>Eixo e Aliados.</p>
             </div>
-            <div class="bloco" id="resposta_certa1" onclick="resposta_certa2()">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa2(this)">
                 <p>Tríplice Aliança e Tríplice Entente.</p>
             </div>
             <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
@@ -56,7 +56,7 @@ const questions = {
             <div class="bloco" id="resposta_errada1" onclick="resposta_errada(this)">
                 <p>Fortaleceu a economia da região e reduziu conflitos.</p>
             </div>
-            <div class="bloco" id="resposta_certa1" onclick="resposta_certa3()">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa3(this)">
                 <p>Aumentou o sentimento nacionalista e rivalidades entre impérios.</p>
             </div>
             <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
@@ -69,7 +69,7 @@ const questions = {
     `,
     questionFour:`
             <h4>4. O que foi o Tratado de Versalhes e como ele impactou a Alemanha após o fim da guerra?</h4>
-            <div class="bloco" id="resposta_certa1" onclick="resposta_certa4()">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa4(this)">
                 <p>Um acordo que culpou a Alemanha pela guerra e impôs duras punições.</p>
             </div>
             <div class="bloco" id="resposta_errada1" onclick="resposta_errada(this)">
@@ -91,7 +91,7 @@ const questions = {
             <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
                 <p>Eram passagens secretas usadas para espionagem.</p>
             </div>
-            <div class="bloco" id="resposta_certa1" onclick="resposta_certa5()">
+            <div class="bloco" id="resposta_certa1" onclick="resposta_certa5(this)">
                 <p>Serviam de proteção contra ataques inimigos, mas eram insalubres e perigosas.</p>
             </div>
             <div class="bloco"id="resposta_errada3" onclick="resposta_errada(this)">
@@ -102,21 +102,50 @@ const questions = {
     final: `
         <div class="Questions" id="quiz-content"> <!--Single page Application-->
             <h2 class="alinhamentoText">Resultado do Quiz</h3>
-            <h3 class="alinhamentoText">Você acertou <span id=""></span> de 5 questões (0%)</h4>
-            <p>Continue fazendo um trabalho, e continue estudando sobre a Primeira Guerra Mundial.</p>
+            <div class="alinhamentoText">
+                <h3 id="quantidade-acertos"></h3>
+            </div>
             <div class="containerButtonSPA">
                 <button onclick="redirecionar('quiz.html')">Reiniciar</button>
             </div>
         </div>
-        <div class="buttons" style="display:none;">
-            <button onclick="prevQuestion()">Anterior</button>
-            <button onclick="nextQuestion()">Próxima</button>
+        <div class="buttons">
+            <button onclick="prevQuestion()" style="display:none;">Anterior</button>
+            <button onclick="nextQuestion()" style="display:none;">Próxima</button>
         </div>
     `
 };
+let acertos = 0;
+let totalRespondida = 0;
 /*REDIRECIONAMENTO DE PÁGINA*/
 function redirecionar(arquivo){
     window.location.href = arquivo;
+}
+function mostrarResultado(){
+    const mensagem = document.getElementById('quantidade-acertos');
+    const porcentagem = (acertos / 5) * 100;
+    if(mensagem){
+        mensagem.innerHTML = `Você acertou ${acertos} de 5 questões (${porcentagem}%)`;
+    }else{
+        console.error("O seu código está com incossistência, verifique o seu ID.");
+    }
+}
+function marcarRepostaCerta(elemento){
+    elemento.style.backgroundColor = "green";
+    elemento.style.color = "white";
+    // Desabilita todas as outras respostas da mesma pergunta
+    const pai = elemento.parentNode;
+    const opcoes = pai.querySelectorAll(".bloco");
+    opcoes.forEach(opcao => {
+        opcao.onclick = null;
+        opcao.style.cursor = "not-allowed";
+    });
+}
+function verificarFim(){
+    const totalPerguntas = 5;
+    if(totalRespondida == totalPerguntas){
+        mostrarResultado();
+    }
 }
 /*VERIFICA SE A RESPOSTA ESTÁ CERTA OU ERRADA.*/
 function resposta_errada(elementoClicado){
@@ -124,7 +153,7 @@ function resposta_errada(elementoClicado){
     elementoClicado.style.color = "white";
     elementoClicado.style.border = "red";
 }
-function resposta_certa1(){
+function resposta_certa1(elemento){
     const explicaoOne = document.getElementById('explicao_pergunta0');
     explicaoOne.innerHTML = `<p>O estopim imediato da Primeira Guerra Mundial foi o assassinato do arquiduque Francisco Ferdinando, 
     herdeiro do Império Austro-Húngaro, em 28 de junho de 1914, na Bósnia. O crime foi cometido por um 
@@ -133,12 +162,12 @@ function resposta_certa1(){
     explicaoOne.style.padding = "20px";
     explicaoOne.style.backgroundColor = "#e6e6d1";
     explicaoOne.style.borderRadius = "8px";
-    const respostaCerta = document.getElementById('resposta_certa1');
-    respostaCerta.style.backgroundColor = "lightgreen";
-    respostaCerta.style.color = "white";
-    respostaCerta.style.border = "green";
+    marcarRepostaCerta(elemento);
+    acertos++;
+    totalRespondida++;
+    verificarFim();
 }
-function resposta_certa2(){
+function resposta_certa2(elemento){
     const explicaoTwo = document.getElementById('explicao_pergunta1');
     explicaoTwo.innerHTML = `<p>Durante a Primeira Guerra Mundial, os dois principais grupos de alianças foram a Tríplice Aliança (Alemanha, 
     Áustria-Hungria e Itália) e a Tríplice Entente (França, Rússia e Reino Unido). Essas alianças formaram os lados 
@@ -146,12 +175,12 @@ function resposta_certa2(){
     explicaoTwo.style.padding = "20px";
     explicaoTwo.style.backgroundColor = "#e6e6d1";
     explicaoTwo.style.borderRadius = "8px";
-    const respostaCerta = document.getElementById('resposta_certa1');
-    respostaCerta.style.backgroundColor = "lightgreen";
-    respostaCerta.style.color = "white";
-    respostaCerta.style.border = "green";
+    marcarRepostaCerta(elemento);
+    acertos++;
+    totalRespondida++;
+    verificarFim();
 }
-function resposta_certa3(){
+function resposta_certa3(elemento){
     const explicacaoThree = document.getElementById('explicao_pergunta2');
     explicacaoThree.innerHTML = `<p>A Crise dos Bálcãs aumentou o nacionalismo entre os povos da região e gerou rivalidades entre os grandes 
     impérios europeus, como o Império Austro-Húngaro e a Rússia. Isso fez crescer as tensões e contribuiu para 
@@ -159,12 +188,12 @@ function resposta_certa3(){
     explicacaoThree.style.padding = "20px";
     explicacaoThree.style.backgroundColor = "#e6e6d1";
     explicacaoThree.style.borderRadius = "8px";
-    const respostaCerta = document.getElementById('resposta_certa1');
-    respostaCerta.style.backgroundColor = "lightgreen";
-    respostaCerta.style.color = "white";
-    respostaCerta.style.border = "green";
+    marcarRepostaCerta(elemento);
+    acertos++;
+    totalRespondida++;
+    verificarFim();
 }
-function resposta_certa4(){
+function resposta_certa4(elemento){
     const explicacaoFour = document.getElementById('explicao_pergunta3');
     explicacaoFour.innerHTML = `<p>O Tratado de Versalhes, assinado em 1919, foi o acordo que encerrou a Primeira Guerra Mundial. Ele <strong>culpou
         a Alemanha pelo conflito</strong> e impôs duras punições, como pesadas indenizações financeiras, perda de 
@@ -173,23 +202,23 @@ function resposta_certa4(){
         explicacaoFour.style.padding = "20px";
         explicacaoFour.style.backgroundColor = "#e6e6d1";
         explicacaoFour.style.borderRadius = "8px";
-        const respostaCerta = document.getElementById('resposta_certa1');
-        respostaCerta.style.backgroundColor = "lightgreen";
-        respostaCerta.style.color = "white";
-        respostaCerta.style.border = "green";
+        marcarRepostaCerta(elemento);
+        acertos++;
+        totalRespondida++;
+        verificarFim();
 }
-function resposta_certa5(){
+function resposta_certa5(elemento){
     const explicacaoFive = document.getElementById('explicao_pergunta4');
     explicacaoFive.innerHTML = `<p>Ás trincheiras eram valas usadas para proteger os soldados dos ataques inimigos durante a guerra. Apesar de 
-    oferecerem abrigo, as condições eram muito ruins: os soldados enfrentavam lama, frio, doenças e falta de 
-    higiene, tornando a vida nas trincheiras muito difícil e perigosa.</p>`;
-    explicacaoFive.style.padding = "20px";
-    explicacaoFive.style.backgroundColor = "#e6e6d1";
-    explicacaoFive.style.borderRadius = "8px";
-    const respostaCerta = document.getElementById('resposta_certa1');
-    respostaCerta.style.backgroundColor = "lightgreen";
-    respostaCerta.style.color = "white";
-    respostaCerta.style.border = "green";
+        oferecerem abrigo, as condições eram muito ruins: os soldados enfrentavam lama, frio, doenças e falta de 
+        higiene, tornando a vida nas trincheiras muito difícil e perigosa.</p>`;
+        explicacaoFive.style.padding = "20px";
+        explicacaoFive.style.backgroundColor = "#e6e6d1";
+        explicacaoFive.style.borderRadius = "8px";
+        marcarRepostaCerta(elemento);
+        acertos++;
+        totalRespondida++;
+        verificarFim();
 }
 
 
