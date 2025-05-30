@@ -233,3 +233,25 @@ main > p{
   width: 0%; /* pode ser alterado via JavaScript */
   transition: width 0.5s ease-in-out;
 }
+.containerButtonSPA{
+    display: flex;
+    justify-content: center;
+}
+.containerButtonSPA > button{
+    font-family: "Old Newspaper Types", Arial, Helvetica, Verdana, sans-serif;
+    background-color: #e6dba0;
+    color: var(--footer);
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.4s;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+    color: var(--cor2);
+}
+.containerButtonSPA > button:hover{
+    transform: scale(1.1);
+}
+.alinhamentoText{
+    text-align: center;
+}
