@@ -76,7 +76,7 @@ const questions = {
                 <p>Um tratado que beneficiou economicamente a Alemanha.</p>
             </div>
             <div class="bloco" id="resposta_errada2" onclick="resposta_errada(this)">
-                <p>Um acordo que culpou a Alemanha pela guerra e impôs duras punições.</p>
+                <p>Um tratado que encerrou a guerra sem punições a nenhum país.</p>
             </div>
             <div class="bloco" id="resposta_errada3" onclick="resposta_errada(this)">
                 <p>Uma aliança entre Alemanha e França contra a Inglaterra.</p>
