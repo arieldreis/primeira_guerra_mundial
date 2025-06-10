@@ -88,7 +88,7 @@ const track2 = document.getElementById('track2');
 // Conta qual slide está aparecendo (começa no 0)
 let currentSlide2 = 0;
 // Total de slides (divs com class="slide")
-const totalSlides2 = track.children.length;
+const totalSlides2 = track2.children.length;
 // Largura do slide
 const slideWidth2 = 300;
 function moveToPrev2(){
