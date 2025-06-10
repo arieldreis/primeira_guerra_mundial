@@ -108,3 +108,4 @@ function moveToNext2(){
     }
     track2.style.transform = `translateX(-${currentSlide2 * slideWidth2}px)`;
 }
+

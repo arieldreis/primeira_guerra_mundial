@@ -205,14 +205,15 @@ main > p{
 .container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .container > img{
     border-radius: 10px;
     max-width: 100%;
-    height: auto;
-    width: 100%;
+    height: 500px;
+    width: 550px;
     object-fit: contain;
 }
 @media (max-width: 768px) {
@@ -220,8 +221,7 @@ main > p{
         height: auto;
     }
 }
-
 .container > a{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }

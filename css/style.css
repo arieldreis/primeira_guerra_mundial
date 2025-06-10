@@ -213,6 +213,11 @@ main > p{
     height: 320px;
     margin-top: 30px;
     border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.container img:hover{
+    transform: scale(0.9);
 }
 .container div{
     display: flex;
@@ -228,3 +233,4 @@ main > p{
 .container a:hover{
     background-color: var(--link_hover);
 }
+
